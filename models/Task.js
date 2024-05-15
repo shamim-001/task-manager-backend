@@ -12,8 +12,8 @@ const TaskSchema = new mongoose.Schema({
     default: false,
   },
   createdAt: {
-    type: Number,
-    default: Date.now(),
+    type: Date,
+    default: new Date(Date.now).getMilliseconds(),
   },
 });
 

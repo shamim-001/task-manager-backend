@@ -12,7 +12,7 @@ const TaskSchema = new mongoose.Schema({
     default: false,
   },
   createdAt: {
-    type: Date,
+    type: Number,
     default: Date.now(),
   },
 });

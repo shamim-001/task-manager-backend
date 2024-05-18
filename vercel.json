@@ -11,5 +11,15 @@
       "src": "/(.*)",
       "dest": "/"
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://task-manager-backend-bay.vercel.app"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
   ]
 }

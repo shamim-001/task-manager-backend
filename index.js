@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import tasks from "./routes/task.js";
 import connectDb from "./db/connect.js";
 dotenv.config();
@@ -11,6 +12,7 @@ connectDb(mongoUrl);
 
 // middleware
 app.use(express.json());
+app.use(cors());
 
 // routes
 app.use("/api/v1/tasks", tasks);

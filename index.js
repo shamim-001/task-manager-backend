@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import tasks from "./routes/task.js";
 import connectDb from "./db/connect.js";
+import { notFound, errorHandler } from "./middleware/errorHandler.js";
 dotenv.config();
 const mongoUrl = process.env.MONGO_URI;
 const port = process.env.PORT;
@@ -16,6 +17,8 @@ app.use(cors());
 // routes
 app.use("/api/v1/tasks", tasks);
 
+app.use(notFound);
+app.use(errorHandler);
 app.listen(port, () => {
   console.log(`app is running on port:${port}`);
 });
